@@ -9,7 +9,7 @@ while True:
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    faces = face_cascade.detectMultiScale(gray, 1.5, 4)
+    faces = face_cascade.detectMultiScale(gray, 1.2, 10, minSize=(100, 100))
 
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 3)
@@ -21,3 +21,4 @@ while True:
 
 webcam.release()
 cv2.destroyAllWindows()
+
